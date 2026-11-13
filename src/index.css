@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #FCFAF7;
+    color: #1C1917;
+    font-family: 'Plus Jakarta Sans', sans-serif, system-ui;
+    overflow-x: hidden;
+  }
+  
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.font-serif-brand {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-sans-brand {
+  font-family: 'Plus Jakarta Sans', sans-serif, system-ui;
+}
+
+/* Custom smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Keyframes for luxury smooth transitions */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-page {
+  animation: pageFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes drawerSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-drawer {
+  animation: drawerSlideIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-modal {
+  animation: modalScaleIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Global interaction transitions */
+button, a {
+  transition-property: color, background-color, border-color, transform, box-shadow, opacity;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 250ms;
+}
