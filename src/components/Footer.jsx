@@ -18,33 +18,33 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#151210] text-stone-300 pt-16 pb-12 border-t border-stone-800 text-sm w-full mt-auto">
-      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12">
+    <footer className="bg-[#2C1E18] text-stone-300 pt-16 pb-12 border-t border-[#3D2C24] text-sm w-full mt-auto">
+      <div className="w-full max-w-[1360px] mx-auto px-6 sm:px-10">
         
         {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-stone-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#3D2C24]">
           
           {/* Brand & Address Column */}
           <div className="lg:col-span-5 space-y-4">
-            <Link to="/" className="inline-block font-serif-brand text-2xl font-bold text-white tracking-widest">
-              THE NINTH SPICE<span className="text-amber-500 text-xs">™</span>
+            <Link to="/" className="inline-block font-cinzel text-xl font-bold text-white tracking-[0.2em]">
+              THE NINTH SPICE<span className="text-[#9C3A1A] text-xs">™</span>
             </Link>
 
-            <p className="text-xs text-stone-400 leading-relaxed max-w-md">
-              Operated under <strong>Kundrapu Ventures Private Limited</strong>. Sourcing genuine Indian farm produce, cold-milling at low RPM, and packing freshness without industrial shortcuts or chemical dyes.
+            <p className="text-xs text-stone-400 leading-relaxed max-w-md font-normal">
+              Operated under <strong>Kundrapu Ventures Private Limited</strong>. Sourcing genuine Andhra farm produce from Guntur and Nizamabad, packaged fresh without chemical additives, synthetic colors, or industrial shortcuts.
             </p>
 
             <div className="space-y-2.5 text-xs text-stone-400 pt-2">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#C23321] shrink-0 mt-0.5" />
-                <span>Assessment No: 1715, Door No: 7-58/1, Paravada, Opposite Canara Bank, Visakhapatnam, Andhra Pradesh – 531021, India</span>
+                <MapPin className="w-4 h-4 text-[#9C3A1A] shrink-0 mt-0.5" />
+                <span>Door No: 7-58/1, Paravada, Opposite Canara Bank, Visakhapatnam, Andhra Pradesh – 531021, India</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-500 shrink-0" />
                 <a href="tel:+919441413344" className="hover:text-white transition-colors font-mono">+91 9441413344 (Mon–Sat, 9AM–7PM)</a>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-emerald-500 shrink-0" />
+                <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
                 <a href="mailto:support@theninthspice.com" className="hover:text-white transition-colors">support@theninthspice.com</a>
               </div>
             </div>
@@ -72,13 +72,12 @@ export default function Footer() {
             </h5>
             <ul className="space-y-2 text-xs text-stone-400">
               <li><Link to="/shop" className="hover:text-white transition-colors">All Spices &amp; Products</Link></li>
-              <li><Link to="/product/the-ninth-spice-red-chilli-powder" className="hover:text-white transition-colors">Red Chilli Powder</Link></li>
-              <li><Link to="/product/the-ninth-spice-turmeric-powder" className="hover:text-white transition-colors">Turmeric Powder</Link></li>
-              <li><Link to="/the-science" className="hover:text-white transition-colors">The Low RPM Science</Link></li>
-              <li><Link to="/our-story" className="hover:text-white transition-colors">Our Heritage Story</Link></li>
-              <li><Link to="/recipes" className="hover:text-white transition-colors">Traditional Kitchen Notes</Link></li>
+              <li><Link to="/product/red-chilli-powder" className="hover:text-white transition-colors">Red Chilli Powder (250g)</Link></li>
+              <li><Link to="/product/turmeric-powder" className="hover:text-white transition-colors">Turmeric Powder (250g)</Link></li>
+              <li><Link to="/our-story" className="hover:text-white transition-colors">Our Andhra Farm Terroir</Link></li>
+              <li><Link to="/recipes" className="hover:text-white transition-colors">Kitchen Notes &amp; Recipes</Link></li>
               <li><Link to="/faqs" className="hover:text-white transition-colors">Frequently Asked Questions</Link></li>
-              <li><Link to="/contact" className="hover:text-white transition-colors">Contact Customer Support</Link></li>
+              <li><Link to="/contact" className="hover:text-white transition-colors">Customer Care &amp; Support</Link></li>
             </ul>
           </div>
 
@@ -87,14 +86,14 @@ export default function Footer() {
             <h5 className="text-white text-xs font-mono font-bold uppercase tracking-wider">
               Join The Spice Circle
             </h5>
-            <p className="text-xs text-stone-400 leading-relaxed">
-              Get traditional culinary recipes, chef hacks for roasting spices, and exclusive early-batch discounts straight to your inbox.
+            <p className="text-xs text-stone-400 leading-relaxed font-normal">
+              Receive traditional culinary notes, seasonal farm harvest alerts, and 10% off your first batch.
             </p>
 
             {subscribed ? (
               <div className="p-3 bg-emerald-950/60 border border-emerald-800 rounded-xl text-xs text-emerald-300 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Welcome to the Spice Circle! Check your inbox for your 10% welcome offer.</span>
+                <span>Welcome to the Spice Circle! Use code WELCOME10 for 10% off.</span>
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="space-y-2">
@@ -102,26 +101,26 @@ export default function Footer() {
                   <input
                     type="email"
                     required
-                    placeholder="Enter your email address"
+                    placeholder="Enter your email address..."
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-stone-900 border border-stone-700 text-xs text-white rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-stone-500"
+                    className="w-full bg-[#1F1511] border border-[#3D2C24] text-xs text-white rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-[#9C3A1A]"
                   />
                   <button
                     type="submit"
-                    className="bg-[#C23321] hover:bg-[#A32819] text-white px-5 py-2.5 rounded-xl text-xs font-semibold transition-all shrink-0"
+                    className="bg-[#9C3A1A] hover:bg-[#B93822] text-white px-5 py-2.5 rounded-xl text-xs font-semibold transition-all shrink-0 cursor-pointer"
                   >
                     Join
                   </button>
                 </div>
-                <div className="text-[10px] text-stone-400">
+                <div className="text-[10px] text-stone-500">
                   Zero spam. Unsubscribe anytime.
                 </div>
               </form>
             )}
 
             <div className="pt-2 flex items-center gap-2 text-xs text-stone-400">
-              <ShieldCheck className="w-4 h-4 text-emerald-500" />
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
               <span>FSSAI Certified Standards • Zero Sudan Red</span>
             </div>
           </div>
@@ -133,7 +132,7 @@ export default function Footer() {
           <div>
             © 2026 THE NINTH SPICE™. All rights reserved. Built for discerning Indian kitchens.
           </div>
-          <div className="flex items-center gap-3 text-[11px] font-mono">
+          <div className="flex items-center gap-3 text-[11px] font-mono text-stone-500">
             <span>UPI Instant</span>
             <span>•</span>
             <span>RuPay / Visa</span>

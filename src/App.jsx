@@ -17,8 +17,10 @@ import CartPage from './pages/CartPage';
 
 import ProductModal from './components/ProductModal';
 import CartDrawer from './components/CartDrawer';
+import WishlistDrawer from './components/WishlistDrawer';
 import CheckoutModal from './components/CheckoutModal';
 import MirchiPowderIntro from './components/MirchiPowderIntro';
+import ScrollProgressIndicator from './components/ScrollProgressIndicator';
 
 import { productsData } from './data/products';
 import { translations } from './data/translations';
@@ -34,7 +36,18 @@ function ScrollToTop() {
 }
 
 // Animated routes wrapper with smooth page transitions
-function AnimatedRoutes({ lang, translations, handleAddToCart, setActiveProductModal, cart, handleUpdateQuantity, handleRemoveItem, handleProceedCheckout }) {
+function AnimatedRoutes({ 
+  lang, 
+  translations, 
+  handleAddToCart, 
+  setActiveProductModal, 
+  cart, 
+  handleUpdateQuantity, 
+  handleRemoveItem, 
+  handleProceedCheckout,
+  handleToggleWishlist,
+  wishlistIds
+}) {
   const location = useLocation();
 
   return (
@@ -49,6 +62,8 @@ function AnimatedRoutes({ lang, translations, handleAddToCart, setActiveProductM
               onAddToCart={handleAddToCart}
               onOpenDetails={setActiveProductModal}
               products={productsData}
+              onToggleWishlist={handleToggleWishlist}
+              wishlistIds={wishlistIds}
             />
           }
         />
@@ -61,6 +76,8 @@ function AnimatedRoutes({ lang, translations, handleAddToCart, setActiveProductM
               onAddToCart={handleAddToCart}
               onOpenDetails={setActiveProductModal}
               products={productsData}
+              onToggleWishlist={handleToggleWishlist}
+              wishlistIds={wishlistIds}
             />
           }
         />
@@ -128,6 +145,8 @@ export default function App() {
   const [lang, setLang] = useState('en');
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [wishlist, setWishlist] = useState([]);
+  const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [activeProductModal, setActiveProductModal] = useState(null);
   const [isCheckoutModalOpen, setIsCheckoutModalOpen] = useState(false);
   const [orderSummary, setOrderSummary] = useState({ grandTotal: 0 });
@@ -138,6 +157,24 @@ export default function App() {
     setTimeout(() => {
       setToast({ show: false, message: '' });
     }, 2800);
+  };
+
+  // Wishlist operations from KaaramKathalu
+  const handleToggleWishlist = (product) => {
+    setWishlist((prev) => {
+      const exists = prev.some((p) => p.id === product.id);
+      if (exists) {
+        showToast(`Removed from your wishlist.`);
+        return prev.filter((p) => p.id !== product.id);
+      } else {
+        showToast(`Saved ${product.name} to your wishlist!`);
+        return [...prev, product];
+      }
+    });
+  };
+
+  const handleRemoveWishlist = (productId) => {
+    setWishlist((prev) => prev.filter((p) => p.id !== productId));
   };
 
   // Cart operations
@@ -220,7 +257,10 @@ export default function App() {
         }`}
       >
         
-        {/* 1. TOP ANNOUNCEMENT BAR */}
+        {/* FLOATING SCROLL PROGRESS INDICATOR (KAARAMKATHALU) */}
+        <ScrollProgressIndicator />
+
+        {/* 1. TOP ANNOUNCEMENT BAR MARQUEE */}
         <AnnouncementBar />
 
         {/* 2. RESPONSIVE FULL-WIDTH NAVBAR */}
@@ -229,6 +269,8 @@ export default function App() {
           setLang={setLang}
           cartCount={totalCartCount}
           openCart={() => setIsCartOpen(true)}
+          wishlistCount={wishlist.length}
+          openWishlist={() => setIsWishlistOpen(true)}
         />
 
         {/* 3. MULTI-PAGE SPA ROUTING WITH SMOOTH TRANSITIONS */}
@@ -242,6 +284,8 @@ export default function App() {
             handleUpdateQuantity={handleUpdateQuantity}
             handleRemoveItem={handleRemoveItem}
             handleProceedCheckout={handleProceedCheckout}
+            handleToggleWishlist={handleToggleWishlist}
+            wishlistIds={wishlist.map(p => p.id)}
           />
         </main>
 
@@ -258,6 +302,15 @@ export default function App() {
           onProceedCheckout={handleProceedCheckout}
           lang={lang}
           translations={translations}
+        />
+
+        {/* SLIDE-OUT WISHLIST DRAWER (KAARAMKATHALU) */}
+        <WishlistDrawer
+          isOpen={isWishlistOpen}
+          onClose={() => setIsWishlistOpen(false)}
+          wishlist={wishlist}
+          onAddToCart={handleAddToCart}
+          onRemoveWishlist={handleRemoveWishlist}
         />
 
         {/* QUICK PRODUCT LAB MODAL */}

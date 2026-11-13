@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { Sparkles, Filter, Search, ArrowUpDown, ShieldCheck, Heart } from 'lucide-react';
 
-export default function ShopPage({ lang, translations, onAddToCart, onOpenDetails, products }) {
+export default function ShopPage({ lang, translations, onAddToCart, onOpenDetails, products, onToggleWishlist, wishlistIds = [] }) {
   const [filterCategory, setFilterCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('featured');
@@ -131,6 +131,8 @@ export default function ShopPage({ lang, translations, onAddToCart, onOpenDetail
               onOpenDetails={onOpenDetails}
               lang={lang}
               translations={translations}
+              onToggleWishlist={onToggleWishlist}
+              isWishlisted={wishlistIds.includes(prod.id)}
             />
           ))}
         </div>

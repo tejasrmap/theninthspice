@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { X, CheckCircle2, ShieldCheck, QrCode, CreditCard, Banknote, ArrowRight } from 'lucide-react';
+import { X, CheckCircle2, ShieldCheck, QrCode, CreditCard, Banknote, ArrowRight, Loader2 } from 'lucide-react';
+import { fetchPincodeDetails } from '../utils/pincode';
 
 export default function CheckoutModal({ isOpen, onClose, orderSummary, onOrderSuccess }) {
   const [rendered, setRendered] = useState(isOpen);
@@ -128,9 +129,25 @@ export default function CheckoutModal({ isOpen, onClose, orderSummary, onOrderSu
                   <label className="block text-stone-600 font-medium mb-1">PIN Code</label>
                   <input
                     type="text"
+                    maxLength={6}
                     value={shippingData.pincode}
-                    onChange={(e) => setShippingData({...shippingData, pincode: e.target.value})}
-                    className="w-full bg-white border border-stone-200 rounded-xl px-3 py-2 text-stone-900 focus:outline-none focus:border-stone-800 transition-colors"
+                    onChange={async (e) => {
+                      const val = e.target.value.replace(/\D/g, '');
+                      setShippingData(prev => ({ ...prev, pincode: val }));
+                      if (val.length === 6) {
+                        const details = await fetchPincodeDetails(val);
+                        if (details) {
+                          setShippingData(prev => ({
+                            ...prev,
+                            pincode: val,
+                            city: details.city || prev.city,
+                            state: details.state || prev.state
+                          }));
+                        }
+                      }
+                    }}
+                    placeholder="530001"
+                    className="w-full bg-white border border-stone-200 rounded-xl px-3 py-2 text-stone-900 focus:outline-none focus:border-stone-800 transition-colors font-mono"
                   />
                 </div>
                 <div>
