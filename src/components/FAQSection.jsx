@@ -7,8 +7,8 @@ export default function FAQSection({ lang, translations }) {
   const t = translations?.[lang] || {};
 
   return (
-    <section id="faqs" className="pt-6 pb-3 sm:pt-8 sm:pb-4 bg-[#FAF5EC]">
-      <div className="max-w-3xl mx-auto px-6 sm:px-10">
+    <section id="faqs" className="pt-5 pb-3 sm:pt-8 sm:pb-4 bg-[#F8F4EB]">
+      <div className="max-w-3xl mx-auto px-4 sm:px-10">
         
         <div className="text-center max-w-lg mx-auto mb-5 space-y-1">
           <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#9C3A1A]">

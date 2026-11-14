@@ -252,7 +252,7 @@ export default function App() {
       )}
 
       <div 
-        className={`min-h-screen flex flex-col bg-[#FAF5EC] text-[#2C1E18] w-full transition-all duration-1000 ease-out ${
+        className={`min-h-screen flex flex-col bg-[#F8F4EB] text-[#29221D] w-full transition-all duration-1000 ease-out ${
           showIntro && !introFading 
             ? 'filter blur-[10px] scale-[0.99] pointer-events-none select-none' 
             : 'filter blur-0 scale-100'

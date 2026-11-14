@@ -1,19 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-warm-bg: #FAF5EC;
-  --color-warm-light: #F3EAD8;
-  --color-warm-dark: #2C1E18;
-  --color-warm-accent: #9C3A1A;
-  --color-forest-green: #26402A;
-  --color-olive: #8F6E4E;
+  --color-deep-chocolate: #24140F;
+  --color-espresso: #382218;
+  --color-antique-gold: #C49A45;
+  --color-warm-ivory: #F8F4EB;
+  --color-natural-beige: #E9DDC9;
+  --color-chilli-red: #A6261D;
+  --color-turmeric-gold: #D99316;
+  --color-dark-text: #29221D;
+  --color-secondary-text: #766B60;
+  
+  --font-serif-brand: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-sans-brand: 'DM Sans', 'Manrope', 'Inter', sans-serif;
 }
 
 @layer base {
   body {
-    background-color: #FAF5EC;
-    color: #2C1E18;
-    font-family: 'Inter', 'Plus Jakarta Sans', sans-serif, system-ui;
+    background-color: #F8F4EB;
+    color: #29221D;
+    font-family: 'DM Sans', 'Manrope', 'Inter', sans-serif, system-ui;
     overflow-x: hidden;
   }
   
@@ -25,7 +33,11 @@
 }
 
 .font-serif-brand {
-  font-family: 'Playfair Display', 'Merriweather', Georgia, serif;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
 .font-cinzel {
@@ -33,7 +45,7 @@
 }
 
 .font-sans-brand {
-  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif, system-ui;
+  font-family: 'DM Sans', 'Manrope', 'Inter', sans-serif, system-ui;
 }
 
 /* Custom smooth scroll */
@@ -55,8 +67,8 @@ html {
 .heritage-divider::after {
   content: "";
   height: 1px;
-  background: linear-gradient(to var(--direction, right), rgba(156, 58, 26, 0.45), transparent);
-  width: 70px;
+  background: linear-gradient(to var(--direction, right), rgba(196, 154, 69, 0.45), transparent);
+  width: 60px;
   display: block;
 }
 .heritage-divider::before {
@@ -79,18 +91,18 @@ html {
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 24s linear infinite;
+  animation: marquee 26s linear infinite;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
 }
 
-/* Keyframes for luxury smooth transitions */
+/* Keyframes for refined human transitions */
 @keyframes pageFadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
@@ -99,7 +111,7 @@ html {
 }
 
 .animate-page {
-  animation: pageFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: pageFadeIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes drawerSlideIn {
@@ -112,13 +124,13 @@ html {
 }
 
 .animate-drawer {
-  animation: drawerSlideIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: drawerSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes modalScaleIn {
   from {
     opacity: 0;
-    transform: scale(0.96) translateY(8px);
+    transform: scale(0.97) translateY(6px);
   }
   to {
     opacity: 1;
@@ -127,12 +139,12 @@ html {
 }
 
 .animate-modal {
-  animation: modalScaleIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: modalScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Global interaction transitions */
+/* Global button and anchor micro-interactions */
 button, a {
   transition-property: color, background-color, border-color, transform, box-shadow, opacity;
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  transition-duration: 250ms;
+  transition-duration: 200ms;
 }

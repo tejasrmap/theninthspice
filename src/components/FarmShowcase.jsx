@@ -1,121 +1,106 @@
 import React from 'react';
-import { MapPin, Sun, Sparkles, CheckCircle2 } from 'lucide-react';
+import { MapPin, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function FarmShowcase() {
   const farmStories = [
     {
       title: "Guntur Sun-Drying Yards",
       location: "Guntur District, Andhra Pradesh",
-      crop: "Stemless Red Chillies",
+      crop: "Stemless Whole Red Chillies",
       image: "https://images.unsplash.com/photo-1588252303782-cb80119abd6d?auto=format&fit=crop&w=800&q=80",
-      caption: "Handpicked whole chillies sun-drying under the Andhra sun on clean cotton tarpaulins. Zero chemical color enhancers or artificial ripening agents."
+      caption: "Hand-harvested whole red chillies dehydrating naturally under the Deccan sun on clean cotton tarpaulins. Zero chemical color enhancers or diesel oven drying."
     },
     {
-      title: "Nizamabad Turmeric Harvest",
-      location: "Nizamabad Belt, Andhra Pradesh",
-      crop: "Curcuma Longa Rhizomes",
+      title: "Nizamabad Black Soil Basin",
+      location: "Nizamabad Agricultural Belt, AP",
+      crop: "Curcuma Longa Finger Rhizomes",
       image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80",
-      caption: "Single-origin finger turmeric lifted from mineral-dense black soil, yielding a certified natural curcumin content exceeding 4.5%."
+      caption: "Single-origin finger turmeric lifted from mineral-dense black clay soil, yielding naturally high bio-active curcumin content exceeding 4.5%."
     },
     {
-      title: "Sustainable Generational Soil",
-      location: "East Godavari & Krishna Basin",
-      crop: "Eco-Agricultural Practices",
+      title: "Generational Farm Alliances",
+      location: "East Godavari & Krishna Delta",
+      crop: "Sustainable Soil Cultivation",
       image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80",
-      caption: "Grown in partnership with generational farmer clusters committed to natural soil fertility and zero toxic pesticide runoffs."
+      caption: "Cultivated in fertile alluvial river basins in fair partnership with smallholder farmers practicing natural crop rotation and pesticide-conscious agriculture."
     }
   ];
 
   return (
-    <section id="farms" className="py-8 sm:py-10 bg-[#FAF5EC] border-b border-[#EAE1D5] w-full relative overflow-hidden">
-      <div className="w-full max-w-[1360px] mx-auto px-6 sm:px-10 relative z-10 space-y-6">
+    <section id="farms" className="py-6 sm:py-10 bg-[#F8F4EB] border-b border-[#E9DDC9] w-full relative overflow-hidden">
+      <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-10 space-y-5">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div className="space-y-1.5">
-            <div className="flex items-center gap-1.5 text-[10px] font-mono tracking-wider uppercase text-[#B93822]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3">
+          <div className="space-y-1">
+            <div className="flex items-center gap-1.5 text-[10px] font-mono tracking-[0.2em] uppercase text-[#A6261D] font-semibold">
               <MapPin className="w-3.5 h-3.5" />
-              <span>Andhra Pradesh Terroir</span>
+              <span>Andhra Farm Terroir</span>
             </div>
-            <h2 className="font-serif-brand text-xl sm:text-2xl font-semibold text-stone-900">
-              Mirchi &amp; Turmeric Farm Origins
+            <h2 className="font-serif-brand text-xl sm:text-2xl text-[#24140F] font-medium">
+              Where The Ninth Spice Originates
             </h2>
           </div>
-          <p className="text-xs sm:text-[13px] text-stone-600 max-w-md leading-relaxed">
-            Authentic flavour begins with honest soil and natural sunlight. A look at the harvest yards and agricultural clusters where THE NINTH SPICE™ is born.
+          <p className="text-xs text-[#766B60] max-w-md leading-relaxed font-sans-brand">
+            True culinary pungency and color originate in uncompromised agricultural soil. A transparent look at our harvesting grounds in Andhra Pradesh.
           </p>
         </div>
 
-        {/* 3-Card Farm Photo Gallery */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        {/* 3-Card Sourcing Landscape Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {farmStories.map((farm, idx) => (
             <div 
               key={idx}
-              className="bg-white rounded-2xl overflow-hidden border border-[#EAE1D5] shadow-2xs hover:shadow-sm transition-all duration-300 group flex flex-col justify-between"
+              className="bg-white rounded-xl overflow-hidden border border-[#E9DDC9] shadow-2xs hover:shadow-xs transition-all group flex flex-col justify-between"
             >
               <div>
-                {/* Photo */}
-                <div className="relative h-52 sm:h-56 overflow-hidden bg-stone-100">
+                <div className="h-48 overflow-hidden relative">
                   <img
                     src={farm.image}
                     alt={farm.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
                   />
-                  <div className="absolute top-3 left-3 bg-[#FCFAF7]/95 backdrop-blur-xs px-2.5 py-1 rounded-full text-[10px] font-mono font-medium text-stone-800 shadow-2xs border border-stone-200/50">
+                  <div className="absolute top-3 left-3 bg-[#24140F]/85 backdrop-blur-xs text-[#F8F4EB] text-[9.5px] font-mono px-2 py-0.5 rounded border border-[#E9DDC9]/30">
                     {farm.crop}
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="p-5 space-y-2">
-                  <div className="text-[11px] font-mono text-[#B93822] flex items-center gap-1 font-semibold">
+                <div className="p-4 space-y-2">
+                  <div className="flex items-center gap-1 text-[10.5px] font-mono text-[#A6261D]">
                     <MapPin className="w-3 h-3" />
                     <span>{farm.location}</span>
                   </div>
 
-                  <h3 className="font-serif-brand text-base sm:text-lg font-semibold text-stone-900">
+                  <h3 className="font-serif-brand text-base font-semibold text-[#24140F]">
                     {farm.title}
                   </h3>
 
-                  <p className="text-xs text-stone-600 leading-relaxed font-normal">
+                  <p className="text-xs text-[#766B60] leading-relaxed font-sans-brand">
                     {farm.caption}
                   </p>
                 </div>
               </div>
 
-              <div className="p-5 pt-0">
-                <div className="pt-3 border-t border-[#F0E9DF] flex items-center justify-between text-[11px] text-stone-400 font-mono">
-                  <span>Harvest Batch 2026</span>
-                  <span className="text-emerald-700 font-semibold">Verified Pure</span>
+              <div className="p-4 pt-0">
+                <div className="w-full pt-3 border-t border-[#E9DDC9]/50 flex items-center justify-between text-[11px] font-sans-brand font-medium text-[#24140F]">
+                  <span>Single-Origin Sourced</span>
+                  <span className="text-[#C49A45]">✻</span>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Terroir & Origin Metrics Strip */}
-        <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#EAE1D5] grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          <div>
-            <div className="text-[10px] font-mono uppercase text-[#B93822] font-semibold">Terroir Coordinates</div>
-            <div className="font-serif-brand text-sm sm:text-base font-semibold text-stone-900 mt-0.5">Guntur &amp; Nizamabad</div>
-            <div className="text-[11px] text-stone-500">16.3°N • 18.6°N</div>
-          </div>
-          <div>
-            <div className="text-[10px] font-mono uppercase text-amber-700 font-semibold">Solar Curing</div>
-            <div className="font-serif-brand text-sm sm:text-base font-semibold text-stone-900 mt-0.5">14 Days Sun-Dried</div>
-            <div className="text-[11px] text-stone-500">Clean cotton tarpaulins</div>
-          </div>
-          <div>
-            <div className="text-[10px] font-mono uppercase text-emerald-700 font-semibold">Chemical Purity</div>
-            <div className="font-serif-brand text-sm sm:text-base font-semibold text-stone-900 mt-0.5">0.00% Sudan Dyes</div>
-            <div className="text-[11px] text-stone-500">Zero artificial colors</div>
-          </div>
-          <div>
-            <div className="text-[10px] font-mono uppercase text-stone-600 font-semibold">Packaging Terroir</div>
-            <div className="font-serif-brand text-sm sm:text-base font-semibold text-stone-900 mt-0.5">Visakhapatnam AP</div>
-            <div className="text-[11px] text-stone-500">Aroma-lock sealed</div>
-          </div>
+        <div className="text-center pt-2">
+          <Link
+            to="/our-story"
+            className="inline-flex items-center gap-1.5 text-xs font-sans-brand font-semibold uppercase tracking-wider text-[#24140F] hover:text-[#A6261D] transition-colors"
+          >
+            <span>Explore Andhra Terroir Clusters</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
 
       </div>

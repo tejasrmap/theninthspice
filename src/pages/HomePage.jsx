@@ -1,15 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
-import ValuePropsStrip from '../components/ValuePropsStrip';
-import FarmShowcase from '../components/FarmShowcase';
+import BrandPhilosophy from '../components/BrandPhilosophy';
 import ProductCard from '../components/ProductCard';
-import TestimonialsSection from '../components/TestimonialsSection';
-import PincodeEstimator from '../components/PincodeEstimator';
-import SpiceQuiz from '../components/SpiceQuiz';
+import FarmShowcase from '../components/FarmShowcase';
 import RecipesSection from '../components/RecipesSection';
+import QualityTrustSection from '../components/QualityTrustSection';
 import FAQSection from '../components/FAQSection';
-import { ArrowRight } from 'lucide-react';
+import PincodeEstimator from '../components/PincodeEstimator';
 import { upcomingSpices } from '../data/products';
 
 export default function HomePage({ 
@@ -21,37 +18,35 @@ export default function HomePage({
   onToggleWishlist, 
   wishlistIds = [] 
 }) {
-  const t = translations?.[lang] || {};
-
   return (
-    <div className="w-full flex flex-col bg-[#FAF5EC]">
+    <div className="w-full flex flex-col bg-[#F8F4EB]">
       
-      {/* 1. HERO SECTION (WITH OFFICIAL COVER PHOTO & QUICK BUY DOCK) */}
+      {/* 1. EDITORIAL HERO SECTION */}
       <Hero
         onAddToCart={onAddToCart}
         products={products}
       />
 
-      {/* 2. VALUE PROPOSITIONS STRIP */}
-      <ValuePropsStrip />
+      {/* 2. BRAND PHILOSOPHY & SOURCING ETHOS */}
+      <BrandPhilosophy />
 
-      {/* 3. BESTSELLERS SECTION WITH HERITAGE DIVIDER */}
-      <section id="spices" className="py-8 sm:py-10 w-full max-w-[1360px] mx-auto px-6 sm:px-10">
-        <div className="text-center mb-6 max-w-xl mx-auto space-y-1">
-          <span className="font-mono text-[#9C3A1A] text-[10px] font-semibold tracking-widest uppercase flex items-center justify-center gap-1.5">
-            <span>🌿</span> Curated Favorites <span>🌿</span>
+      {/* 3. FEATURED PRODUCTS (THE SIGNATURE DUO) */}
+      <section id="spices" className="py-6 sm:py-10 w-full max-w-[1360px] mx-auto px-4 sm:px-10">
+        <div className="text-center mb-5 max-w-xl mx-auto space-y-1">
+          <span className="font-mono text-[#A6261D] text-[10px] font-semibold tracking-[0.2em] uppercase flex items-center justify-center gap-1.5">
+            <span>✻</span> Pure Single-Origin Harvest <span>✻</span>
           </span>
-          <h2 className="text-xl sm:text-2xl font-serif-brand font-semibold text-[#2C1E18]">
-            Our Bestsellers
+          <h2 className="text-2xl sm:text-3xl font-serif-brand font-medium text-[#24140F]">
+            The Signature Collection
           </h2>
-          <div className="heritage-divider text-[#9C3A1A] w-full max-w-[150px]">✻</div>
-          <p className="font-serif-brand italic text-stone-600 text-xs sm:text-[13px] leading-relaxed">
+          <div className="heritage-divider text-[#C49A45] w-full max-w-[140px]">✻</div>
+          <p className="font-serif-brand italic text-[#766B60] text-xs sm:text-[13px] leading-relaxed">
             Time-honored single-origin spices. Zero added chemicals, 100% natural Andhra farm produce.
           </p>
         </div>
 
-        {/* Product Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-8">
+        {/* Product Cards Grid with Editorial Styling */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 xl:gap-8">
           {products.map((prod) => (
             <ProductCard
               key={prod.id}
@@ -67,36 +62,36 @@ export default function HomePage({
         </div>
 
         {/* Pincode Serviceability Estimator */}
-        <div className="mt-6 max-w-xl mx-auto">
+        <div className="mt-5 max-w-xl mx-auto">
           <PincodeEstimator />
         </div>
 
         {/* Upcoming Spices Strip */}
-        <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-white border border-[#EAE1D5]">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+        <div className="mt-6 p-4 sm:p-6 rounded-xl bg-white border border-[#E9DDC9]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3.5 gap-1.5">
             <div className="space-y-0.5">
-              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#9C3A1A]">
+              <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#A6261D]">
                 Expanding The Pantry
               </span>
-              <h3 className="font-serif-brand text-base sm:text-lg font-semibold text-[#2C1E18]">
+              <h3 className="font-serif-brand text-base sm:text-lg font-semibold text-[#24140F]">
                 Coming Soon to THE NINTH SPICE™
               </h3>
             </div>
-            <span className="text-xs text-stone-400 font-medium">
+            <span className="text-xs text-[#766B60] font-medium font-sans-brand">
               Single-origin whole spices currently in small-batch development.
             </span>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5">
             {upcomingSpices.map((s, idx) => (
-              <div key={idx} className="p-3.5 rounded-xl bg-[#FAF5EC] border border-[#EAE1D5] space-y-1">
-                <span className="text-[10px] font-mono font-bold text-stone-500 bg-white px-2 py-0.5 rounded-full border border-stone-200">
+              <div key={idx} className="p-3 rounded-lg bg-[#F8F4EB] border border-[#E9DDC9] space-y-1">
+                <span className="text-[9.5px] font-mono font-bold text-[#766B60] bg-white px-2 py-0.5 rounded border border-[#E9DDC9]">
                   {s.tag}
                 </span>
-                <div className="font-serif-brand font-semibold text-xs sm:text-sm text-[#2C1E18] pt-0.5">
+                <div className="font-serif-brand font-semibold text-xs sm:text-sm text-[#24140F] pt-0.5">
                   {s.name}
                 </div>
-                <div className="text-[11px] text-stone-500 leading-normal">
+                <div className="text-[11px] text-[#766B60] leading-normal font-sans-brand">
                   {s.desc}
                 </div>
               </div>
@@ -108,16 +103,13 @@ export default function HomePage({
       {/* 4. ANDHRA FARM TERROIR & HARVEST SHOWCASE */}
       <FarmShowcase />
 
-      {/* 5. CUSTOMER TESTIMONIALS CAROUSEL */}
-      <TestimonialsSection />
-
-      {/* 6. CULINARY MATCHER QUIZ */}
-      <SpiceQuiz onAddToCart={onAddToCart} products={products} />
-
-      {/* 7. KITCHEN NOTES & RECIPES */}
+      {/* 5. CULINARY PAIRINGS & RECIPES */}
       <RecipesSection onAddToCart={onAddToCart} products={products} />
 
-      {/* 8. FAQS */}
+      {/* 6. QUALITY STANDARDS & INSTITUTIONAL TRUST */}
+      <QualityTrustSection />
+
+      {/* 7. FREQUENTLY ASKED QUESTIONS */}
       <FAQSection lang={lang} translations={translations} />
 
     </div>
