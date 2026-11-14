@@ -60,8 +60,8 @@ export default function ProductDetailPage({ onAddToCart, lang, translations, onT
   };
 
   return (
-    <div className="w-full bg-[#FAF5EC] py-6 sm:py-10">
-      <div className="w-full max-w-[1360px] mx-auto px-6 sm:px-10 space-y-8">
+    <div className="w-full bg-[#FAF5EC] pt-4 pb-6 sm:pt-6 sm:pb-8">
+      <div className="w-full max-w-[1360px] mx-auto px-6 sm:px-10 space-y-6">
         
         {/* Top Navigation & Breadcrumb */}
         <div className="flex flex-wrap items-center justify-between gap-3 text-xs border-b border-[#EAE1D5] pb-4">

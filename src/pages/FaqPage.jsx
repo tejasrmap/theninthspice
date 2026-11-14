@@ -13,19 +13,19 @@ export default function FaqPage() {
   );
 
   return (
-    <div className="w-full py-10 sm:py-14 space-y-12">
+    <div className="w-full bg-[#FAF5EC] pt-4 pb-6 sm:pt-6 sm:pb-8 space-y-6">
       
       {/* Top Banner */}
       <div className="w-full max-w-[1360px] mx-auto px-6 sm:px-10">
-        <div className="bg-[#F5EDE1] rounded-3xl p-6 sm:p-10 border border-[#EAE1D5] relative overflow-hidden">
-          <div className="relative z-10 max-w-2xl space-y-2.5">
-            <div className="flex items-center gap-2 text-[10px] font-mono font-semibold uppercase tracking-wider text-[#B93822]">
-              <Link to="/" className="text-stone-500 hover:text-black">Home</Link>
+        <div className="bg-[#F5EDE1] rounded-2xl p-5 sm:p-7 border border-[#EAE1D5] relative overflow-hidden">
+          <div className="relative z-10 max-w-2xl space-y-2">
+            <div className="flex items-center gap-2 text-[10px] font-mono font-semibold uppercase tracking-wider text-[#9C3A1A]">
+              <Link to="/" className="text-stone-500 hover:text-[#9C3A1A]">Home</Link>
               <span>/</span>
               <span>FAQs</span>
             </div>
 
-            <h1 className="font-serif-brand text-xl sm:text-2xl font-semibold text-[#1C1917]">
+            <h1 className="font-serif-brand text-xl sm:text-2xl font-semibold text-[#2C1E18]">
               Frequently Asked Questions
             </h1>
 

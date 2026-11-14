@@ -28,11 +28,11 @@ export default function OurStoryPage() {
   ];
 
   return (
-    <div className="w-full py-8 sm:py-12 bg-[#FAF7F2] space-y-12">
+    <div className="w-full pt-4 pb-6 sm:pt-6 sm:pb-8 bg-[#FAF5EC] space-y-6">
       
       {/* Top Hero Banner */}
       <div className="w-full max-w-[1360px] mx-auto px-6 sm:px-10">
-        <div className="bg-[#F5EDE1] rounded-3xl p-6 sm:p-10 border border-[#EAE1D5] relative overflow-hidden">
+        <div className="bg-[#F5EDE1] rounded-2xl p-5 sm:p-7 border border-[#EAE1D5] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-80 h-80 bg-amber-100/40 rounded-full blur-3xl pointer-events-none" />
           
           <div className="relative z-10 max-w-2xl space-y-2.5">

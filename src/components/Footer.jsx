@@ -18,11 +18,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#2C1E18] text-stone-300 pt-10 pb-8 border-t border-[#3D2C24] text-sm w-full mt-auto">
+    <footer className="bg-[#2C1E18] text-stone-300 pt-7 pb-6 border-t border-[#3D2C24] text-sm w-full mt-auto">
       <div className="w-full max-w-[1360px] mx-auto px-6 sm:px-10">
         
         {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-8 border-b border-[#3D2C24]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 pb-6 border-b border-[#3D2C24]">
           
           {/* Brand & Address Column */}
           <div className="lg:col-span-5 space-y-4">
