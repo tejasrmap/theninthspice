@@ -46,10 +46,10 @@ export default function SpiceQuiz({ onAddToCart, products }) {
   const current = preferences.find(p => p.id === selectedPreference);
 
   return (
-    <section className="py-14 bg-[#FAF7F2] border-b border-[#EAE1D5]">
+    <section className="py-8 sm:py-10 bg-[#FAF5EC] border-b border-[#EAE1D5]">
       <div className="max-w-[1360px] mx-auto px-6 sm:px-10">
         
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#EAE1D5] shadow-2xs space-y-6">
+        <div className="bg-white rounded-2xl p-5 sm:p-7 border border-[#EAE1D5] shadow-xs space-y-5">
           
           <div className="text-center space-y-1.5 max-w-md mx-auto">
             <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#B93822]">

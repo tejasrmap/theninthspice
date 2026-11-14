@@ -27,16 +27,8 @@ export default function FarmShowcase() {
   ];
 
   return (
-    <section id="farms" className="py-16 lg:py-20 bg-[#FAF7F2] border-b border-[#EAE1D5] w-full relative overflow-hidden">
-      {/* Background spice texture */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-[0.05] pointer-events-none mix-blend-multiply"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1600&q=80')`
-        }}
-      />
-
-      <div className="w-full max-w-[1360px] mx-auto px-6 sm:px-10 relative z-10 space-y-10">
+    <section id="farms" className="py-8 sm:py-10 bg-[#FAF5EC] border-b border-[#EAE1D5] w-full relative overflow-hidden">
+      <div className="w-full max-w-[1360px] mx-auto px-6 sm:px-10 relative z-10 space-y-6">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">

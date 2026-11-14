@@ -4,10 +4,10 @@ import { recipes } from '../data/products';
 
 export default function RecipesSection({ onAddToCart, products }) {
   return (
-    <section id="recipes" className="py-16 bg-[#FAF7F2] border-b border-[#EAE1D5]">
+    <section id="recipes" className="py-8 sm:py-10 bg-[#FAF5EC] border-b border-[#EAE1D5]">
       <div className="max-w-[1360px] mx-auto px-6 sm:px-10">
         
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-3">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-2">
           <div>
             <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#B93822]">
               Culinary Notes

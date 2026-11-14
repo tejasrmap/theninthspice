@@ -47,11 +47,11 @@ export default function TestimonialsSection() {
   }, [testimonials.length]);
 
   return (
-    <section className="py-16 sm:py-20 bg-[#F3EAD8]/50 border-b border-[#EAE1D5] w-full">
+    <section className="py-8 sm:py-10 bg-[#FAF5EC] border-b border-[#EAE1D5] w-full">
       <div className="max-w-[1360px] mx-auto px-6 sm:px-10">
         
-        {/* Section Header with KaaramKathalu Heritage Styling */}
-        <div className="text-center mb-10 max-w-xl mx-auto space-y-1.5">
+        {/* Section Header */}
+        <div className="text-center mb-6 max-w-xl mx-auto space-y-1">
           <span className="font-mono text-[#9C3A1A] text-[10px] font-semibold tracking-widest uppercase flex items-center justify-center gap-1.5">
             <span>🌿</span> Loved by Food Lovers <span>🌿</span>
           </span>
@@ -113,3 +113,4 @@ export default function TestimonialsSection() {
     </section>
   );
 }
+

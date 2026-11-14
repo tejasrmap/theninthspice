@@ -7,10 +7,10 @@ export default function FAQSection({ lang, translations }) {
   const t = translations[lang];
 
   return (
-    <section id="faqs" className="py-16 bg-[#F5EDE1] border-b border-[#EAE1D5]">
+    <section id="faqs" className="py-8 sm:py-10 bg-[#FAF5EC] border-b border-[#EAE1D5]">
       <div className="max-w-3xl mx-auto px-6 sm:px-10">
         
-        <div className="text-center max-w-lg mx-auto mb-10 space-y-1.5">
+        <div className="text-center max-w-lg mx-auto mb-6 space-y-1">
           <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#B93822]">
             Clear Answers
           </span>

@@ -32,16 +32,16 @@ export default function HomePage({
         products={products}
       />
 
-      {/* 2. VALUE PROPOSITIONS STRIP (FROM KAARAMKATHALU) */}
+      {/* 2. VALUE PROPOSITIONS STRIP */}
       <ValuePropsStrip />
 
       {/* 3. BESTSELLERS SECTION WITH HERITAGE DIVIDER */}
-      <section id="spices" className="py-14 lg:py-20 w-full max-w-[1360px] mx-auto px-6 sm:px-10">
-        <div className="text-center mb-10 max-w-xl mx-auto space-y-1.5">
+      <section id="spices" className="py-8 sm:py-10 w-full max-w-[1360px] mx-auto px-6 sm:px-10">
+        <div className="text-center mb-6 max-w-xl mx-auto space-y-1">
           <span className="font-mono text-[#9C3A1A] text-[10px] font-semibold tracking-widest uppercase flex items-center justify-center gap-1.5">
             <span>🌿</span> Curated Favorites <span>🌿</span>
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif-brand font-semibold text-[#2C1E18]">
+          <h2 className="text-xl sm:text-2xl font-serif-brand font-semibold text-[#2C1E18]">
             Our Bestsellers
           </h2>
           <div className="heritage-divider text-[#9C3A1A] w-full max-w-[150px]">✻</div>
@@ -50,8 +50,8 @@ export default function HomePage({
           </p>
         </div>
 
-        {/* Product Cards Grid with KaaramKathalu Aesthetic */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-10">
+        {/* Product Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-8">
           {products.map((prod) => (
             <ProductCard
               key={prod.id}
@@ -67,18 +67,18 @@ export default function HomePage({
         </div>
 
         {/* Pincode Serviceability Estimator */}
-        <div className="mt-10 max-w-xl mx-auto">
+        <div className="mt-6 max-w-xl mx-auto">
           <PincodeEstimator />
         </div>
 
         {/* Upcoming Spices Strip */}
-        <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-white border border-[#EAE1D5]">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-2">
-            <div className="space-y-1">
+        <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-white border border-[#EAE1D5]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+            <div className="space-y-0.5">
               <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#9C3A1A]">
                 Expanding The Pantry
               </span>
-              <h3 className="font-serif-brand text-lg sm:text-xl font-semibold text-[#2C1E18]">
+              <h3 className="font-serif-brand text-base sm:text-lg font-semibold text-[#2C1E18]">
                 Coming Soon to THE NINTH SPICE™
               </h3>
             </div>
@@ -87,13 +87,13 @@ export default function HomePage({
             </span>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {upcomingSpices.map((s, idx) => (
-              <div key={idx} className="p-4 rounded-xl bg-[#FAF5EC] border border-[#EAE1D5] space-y-1.5">
+              <div key={idx} className="p-3.5 rounded-xl bg-[#FAF5EC] border border-[#EAE1D5] space-y-1">
                 <span className="text-[10px] font-mono font-bold text-stone-500 bg-white px-2 py-0.5 rounded-full border border-stone-200">
                   {s.tag}
                 </span>
-                <div className="font-serif-brand font-semibold text-xs sm:text-sm text-[#2C1E18] pt-1">
+                <div className="font-serif-brand font-semibold text-xs sm:text-sm text-[#2C1E18] pt-0.5">
                   {s.name}
                 </div>
                 <div className="text-[11px] text-stone-500 leading-normal">
@@ -108,7 +108,7 @@ export default function HomePage({
       {/* 4. ANDHRA FARM TERROIR & HARVEST SHOWCASE */}
       <FarmShowcase />
 
-      {/* 5. CUSTOMER TESTIMONIALS CAROUSEL (FROM KAARAMKATHALU) */}
+      {/* 5. CUSTOMER TESTIMONIALS CAROUSEL */}
       <TestimonialsSection />
 
       {/* 6. CULINARY MATCHER QUIZ */}

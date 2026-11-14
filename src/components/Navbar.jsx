@@ -72,7 +72,7 @@ export default function Navbar({ lang, setLang, cartCount, openCart, wishlistCou
 
           <div className="h-3.5 w-[1px] bg-stone-300 hidden sm:block" />
 
-          {/* Wishlist Button from KaaramKathalu */}
+          {/* Wishlist Button */}
           <button
             onClick={openWishlist}
             className="flex items-center gap-1 text-stone-800 hover:text-[#9C3A1A] transition-colors p-1.5 rounded-full hover:bg-stone-100 relative"

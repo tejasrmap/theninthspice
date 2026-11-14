@@ -88,6 +88,8 @@ function AnimatedRoutes({
               onAddToCart={handleAddToCart}
               lang={lang}
               translations={translations}
+              onToggleWishlist={handleToggleWishlist}
+              wishlistIds={wishlist.map(p => p.id)}
             />
           }
         />
@@ -140,7 +142,7 @@ function AnimatedRoutes({
 }
 
 export default function App() {
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(false);
   const [introFading, setIntroFading] = useState(false);
   const [lang, setLang] = useState('en');
   const [cart, setCart] = useState([]);
@@ -159,7 +161,7 @@ export default function App() {
     }, 2800);
   };
 
-  // Wishlist operations from KaaramKathalu
+  // Wishlist operations
   const handleToggleWishlist = (product) => {
     setWishlist((prev) => {
       const exists = prev.some((p) => p.id === product.id);
@@ -250,14 +252,14 @@ export default function App() {
       )}
 
       <div 
-        className={`min-h-screen flex flex-col bg-[#FAF7F2] text-[#1C1917] w-full transition-all duration-1000 ease-out ${
+        className={`min-h-screen flex flex-col bg-[#FAF5EC] text-[#2C1E18] w-full transition-all duration-1000 ease-out ${
           showIntro && !introFading 
             ? 'filter blur-[10px] scale-[0.99] pointer-events-none select-none' 
             : 'filter blur-0 scale-100'
         }`}
       >
         
-        {/* FLOATING SCROLL PROGRESS INDICATOR (KAARAMKATHALU) */}
+        {/* FLOATING SCROLL PROGRESS INDICATOR */}
         <ScrollProgressIndicator />
 
         {/* 1. TOP ANNOUNCEMENT BAR MARQUEE */}
@@ -304,7 +306,7 @@ export default function App() {
           translations={translations}
         />
 
-        {/* SLIDE-OUT WISHLIST DRAWER (KAARAMKATHALU) */}
+        {/* SLIDE-OUT WISHLIST DRAWER */}
         <WishlistDrawer
           isOpen={isWishlistOpen}
           onClose={() => setIsWishlistOpen(false)}
