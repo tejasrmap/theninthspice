@@ -252,10 +252,10 @@ export default function App() {
       )}
 
       <div 
-        className={`min-h-screen flex flex-col bg-[#F8F4EB] text-[#29221D] w-full transition-all duration-800 ease-out ${
+        className={`min-h-screen flex flex-col bg-[#F8F4EB] text-[#29221D] w-full transition-all duration-700 ease-out ${
           showIntro && !introFading 
             ? 'filter blur-[4px] scale-[0.995] pointer-events-none select-none' 
-            : 'filter blur-0 scale-100'
+            : ''
         }`}
       >
         
@@ -291,77 +291,74 @@ export default function App() {
           />
         </main>
 
-        {/* 4. FOOTER */}
+        {/* 4. FOOTER - THE FINAL ELEMENT OF PAGE CONTAINER */}
         <Footer />
+      </div>
 
-        {/* SLIDE-OUT CART DRAWER */}
-        <CartDrawer
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          cart={cart}
-          updateQuantity={handleUpdateQuantity}
-          removeItem={handleRemoveItem}
-          onProceedCheckout={handleProceedCheckout}
-          lang={lang}
-          translations={translations}
-        />
+      {/* OVERLAYS, MODALS & DRAWERS (MOUNTED OUTSIDE PAGE FLOW) */}
+      <CartDrawer
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        cart={cart}
+        updateQuantity={handleUpdateQuantity}
+        removeItem={handleRemoveItem}
+        onProceedCheckout={handleProceedCheckout}
+        lang={lang}
+        translations={translations}
+      />
 
-        {/* SLIDE-OUT WISHLIST DRAWER */}
-        <WishlistDrawer
-          isOpen={isWishlistOpen}
-          onClose={() => setIsWishlistOpen(false)}
-          wishlist={wishlist}
-          onAddToCart={handleAddToCart}
-          onRemoveWishlist={handleRemoveWishlist}
-        />
+      <WishlistDrawer
+        isOpen={isWishlistOpen}
+        onClose={() => setIsWishlistOpen(false)}
+        wishlist={wishlist}
+        onAddToCart={handleAddToCart}
+        onRemoveWishlist={handleRemoveWishlist}
+      />
 
-        {/* QUICK PRODUCT LAB MODAL */}
-        <ProductModal
-          product={activeProductModal}
-          onClose={() => setActiveProductModal(null)}
-          onAddToCart={handleAddToCart}
-        />
+      <ProductModal
+        product={activeProductModal}
+        onClose={() => setActiveProductModal(null)}
+        onAddToCart={handleAddToCart}
+      />
 
-        {/* CHECKOUT MODAL */}
-        <CheckoutModal
-          isOpen={isCheckoutModalOpen}
-          onClose={() => setIsCheckoutModalOpen(false)}
-          orderSummary={orderSummary}
-          onOrderSuccess={handleOrderSuccess}
-        />
+      <CheckoutModal
+        isOpen={isCheckoutModalOpen}
+        onClose={() => setIsCheckoutModalOpen(false)}
+        orderSummary={orderSummary}
+        onOrderSuccess={handleOrderSuccess}
+      />
 
-        {/* TOAST NOTIFICATION */}
+      {/* TOAST NOTIFICATION */}
+      {toast.show && (
         <div
-          className={`fixed bottom-6 right-6 z-50 bg-[#1C1917] text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 transform transition-all duration-300 ${
-            toast.show ? 'translate-y-0 opacity-100' : 'translate-y-24 opacity-0 pointer-events-none'
-          }`}
+          className="fixed bottom-6 right-6 z-50 bg-[#1C1917] text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 animate-fade-in"
         >
           <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
           <span className="text-xs font-medium">{toast.message}</span>
         </div>
+      )}
 
-        {/* MOBILE STICKY FLOATING CART BAR */}
-        {cart.length > 0 && !isCartOpen && (
-          <div className="lg:hidden fixed bottom-4 left-4 right-4 z-30">
-            <button
-              onClick={() => setIsCartOpen(true)}
-              className="w-full bg-[#1C1917] hover:bg-black text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center justify-between border border-stone-800"
-            >
-              <div className="flex items-center gap-2.5">
-                <span className="bg-[#C23321] text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
-                  {totalCartCount} items
-                </span>
-                <span className="font-serif-brand font-bold text-sm">View Spice Bag</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-mono font-bold text-amber-400 text-sm">₹{cartSubtotal}</span>
-                <ArrowRight className="w-4 h-4" />
-              </div>
-            </button>
-          </div>
-        )}
+      {/* MOBILE STICKY FLOATING CART BAR */}
+      {cart.length > 0 && !isCartOpen && (
+        <div className="lg:hidden fixed bottom-4 left-4 right-4 z-30">
+          <button
+            onClick={() => setIsCartOpen(true)}
+            className="w-full bg-[#1C1917] hover:bg-black text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center justify-between border border-stone-800 cursor-pointer"
+          >
+            <div className="flex items-center gap-2.5">
+              <span className="bg-[#C23321] text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+                {totalCartCount} items
+              </span>
+              <span className="font-serif-brand font-bold text-sm">View Spice Bag</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="font-mono font-bold text-amber-400 text-sm">₹{cartSubtotal}</span>
+              <ArrowRight className="w-4 h-4" />
+            </div>
+          </button>
+        </div>
+      )}
 
-      </div>
     </Router>
   );
 }

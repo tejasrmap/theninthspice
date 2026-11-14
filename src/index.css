@@ -18,8 +18,13 @@
 }
 
 @layer base {
+  html {
+    background-color: #24140F;
+    scroll-behavior: smooth;
+  }
+
   body {
-    background-color: #F8F4EB;
+    background-color: #24140F;
     color: #29221D;
     font-family: 'DM Sans', 'Manrope', 'Inter', sans-serif, system-ui;
     overflow-x: hidden;
@@ -29,6 +34,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #24140F;
   }
 }
 
