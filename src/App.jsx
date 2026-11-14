@@ -89,7 +89,7 @@ function AnimatedRoutes({
               lang={lang}
               translations={translations}
               onToggleWishlist={handleToggleWishlist}
-              wishlistIds={wishlist.map(p => p.id)}
+              wishlistIds={wishlistIds}
             />
           }
         />
