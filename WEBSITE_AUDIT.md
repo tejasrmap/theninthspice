@@ -83,3 +83,4 @@ flowchart TD
 3. **Product Detail Page:** Ensure dynamic pricing updates for 150g, 250g, and 500g pouches, zero fake reviews, transparent lab assays, and instant add-to-bag interactions.
 4. **Legal & Institutional Credibility:** Ground the website in its verified business entity **GT InnoX LLP**, with customer care lines, physical Andhra address, and genuine FSSAI standards.
 5. **Quality Verification:** Run full production builds, verify responsive viewports from 360px to 1920px, and confirm all cart interactions persist seamlessly.
+

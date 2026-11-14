@@ -79,3 +79,4 @@ dist/assets/index-Dks6N7q8.js   432.98 kB │ gzip: 120.47 kB
 - Added [public/robots.txt](file:///c:/Users/tejag/Downloads/NINTH-SPICE/public/robots.txt)
 - Added [public/sitemap.xml](file:///c:/Users/tejag/Downloads/NINTH-SPICE/public/sitemap.xml)
 - Injected OpenGraph metadata (`og:title`, `og:image`, `og:description`) and Schema.org JSON-LD structured data into `index.html`.
+
