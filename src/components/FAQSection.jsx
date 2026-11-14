@@ -7,10 +7,10 @@ export default function FAQSection({ lang, translations }) {
   const t = translations?.[lang] || {};
 
   return (
-    <section id="faqs" className="pt-5 pb-0 sm:pt-8 sm:pb-0 bg-[#F8F4EB]">
-      <div className="max-w-3xl mx-auto px-4 sm:px-10 pb-0">
+    <section id="faqs" className="pt-6 pb-8 sm:pt-10 sm:pb-12 bg-[#F8F4EB] border-b border-[#E9DDC9]">
+      <div className="max-w-3xl mx-auto px-4 sm:px-10">
         
-        <div className="text-center max-w-lg mx-auto mb-5 space-y-1">
+        <div className="text-center max-w-lg mx-auto mb-6 space-y-1">
           <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#9C3A1A]">
             Clear Answers
           </span>
@@ -22,7 +22,7 @@ export default function FAQSection({ lang, translations }) {
           </p>
         </div>
 
-        <div className="space-y-2 pb-0 mb-0">
+        <div className="space-y-2.5">
           {faqsList.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (
