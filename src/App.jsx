@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
 import AnnouncementBar from './components/AnnouncementBar';
 import Navbar from './components/Navbar';
@@ -10,8 +10,6 @@ import ShopPage from './pages/ShopPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import SciencePage from './pages/SciencePage';
 import OurStoryPage from './pages/OurStoryPage';
-import RecipesPage from './pages/RecipesPage';
-import FaqPage from './pages/FaqPage';
 import ContactPage from './pages/ContactPage';
 import CartPage from './pages/CartPage';
 
@@ -108,16 +106,11 @@ function AnimatedRoutes({
         />
         <Route
           path="/recipes"
-          element={
-            <RecipesPage
-              onAddToCart={handleAddToCart}
-              products={productsData}
-            />
-          }
+          element={<Navigate to="/shop" replace />}
         />
         <Route
           path="/faqs"
-          element={<FaqPage />}
+          element={<Navigate to="/contact" replace />}
         />
         <Route
           path="/contact"

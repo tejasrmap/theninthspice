@@ -71,12 +71,11 @@ export default function Footer() {
               Explore Spices
             </h5>
             <ul className="space-y-1.5 text-xs text-[#E9DDC9]/75 font-sans-brand">
-              <li><Link to="/shop" className="hover:text-white transition-colors">All Pure Spices</Link></li>
+              <li><Link to="/shop" className="hover:text-white transition-colors">All Pure Spices &amp; Harvests</Link></li>
               <li><Link to="/product/red-chilli-powder" className="hover:text-white transition-colors">Red Chilli Powder (250g Pouch)</Link></li>
               <li><Link to="/product/turmeric-powder" className="hover:text-white transition-colors">Turmeric Powder (250g Pouch)</Link></li>
               <li><Link to="/our-story" className="hover:text-white transition-colors">Andhra Farm Terroir</Link></li>
-              <li><Link to="/recipes" className="hover:text-white transition-colors">Culinary Pairings &amp; Recipes</Link></li>
-              <li><Link to="/faqs" className="hover:text-white transition-colors">Frequently Asked Questions</Link></li>
+              <li><Link to="/the-science" className="hover:text-white transition-colors">Cold Stone Milling &amp; Testing</Link></li>
               <li><Link to="/contact" className="hover:text-white transition-colors">Customer Care &amp; Support</Link></li>
             </ul>
           </div>
@@ -134,11 +133,11 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-4 text-[11px] font-mono text-[#E9DDC9]/60">
-            <Link to="/faqs" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/contact" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span>•</span>
-            <Link to="/faqs" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link to="/contact" className="hover:text-white transition-colors">Terms of Service</Link>
             <span>•</span>
-            <Link to="/faqs" className="hover:text-white transition-colors">Shipping &amp; Replacement</Link>
+            <Link to="/contact" className="hover:text-white transition-colors">Shipping &amp; Replacement</Link>
           </div>
         </div>
 

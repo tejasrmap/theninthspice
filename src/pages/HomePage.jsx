@@ -3,9 +3,7 @@ import Hero from '../components/Hero';
 import BrandPhilosophy from '../components/BrandPhilosophy';
 import ProductCard from '../components/ProductCard';
 import FarmShowcase from '../components/FarmShowcase';
-import RecipesSection from '../components/RecipesSection';
 import QualityTrustSection from '../components/QualityTrustSection';
-import FAQSection from '../components/FAQSection';
 import PincodeEstimator from '../components/PincodeEstimator';
 import { upcomingSpices } from '../data/products';
 
@@ -82,17 +80,27 @@ export default function HomePage({
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5">
-            {upcomingSpices.map((s, idx) => (
-              <div key={idx} className="p-3 rounded-lg bg-[#F8F4EB] border border-[#E9DDC9] space-y-1">
-                <span className="text-[9.5px] font-mono font-bold text-[#766B60] bg-white px-2 py-0.5 rounded border border-[#E9DDC9]">
-                  {s.tag}
-                </span>
-                <div className="font-serif-brand font-semibold text-xs sm:text-sm text-[#24140F] pt-0.5">
-                  {s.name}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {upcomingSpices.map((s) => (
+              <div key={s.id} className="p-3.5 rounded-lg bg-[#F8F4EB] border border-[#E9DDC9] space-y-1.5 flex flex-col justify-between">
+                <div className="space-y-1">
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-[9.5px] font-mono font-bold text-[#766B60] bg-white px-2 py-0.5 rounded border border-[#E9DDC9]">
+                      {s.tag}
+                    </span>
+                    <span className="text-[9.5px] font-mono text-[#A6261D] font-semibold">
+                      {s.origin}
+                    </span>
+                  </div>
+                  <div className="font-serif-brand font-semibold text-xs sm:text-sm text-[#24140F]">
+                    {s.name}
+                  </div>
+                  <div className="text-[11px] text-[#766B60] leading-normal font-sans-brand">
+                    {s.desc}
+                  </div>
                 </div>
-                <div className="text-[11px] text-[#766B60] leading-normal font-sans-brand">
-                  {s.desc}
+                <div className="text-[10px] font-mono text-stone-500 pt-1 border-t border-[#E9DDC9]/50">
+                  {s.expectedRelease}
                 </div>
               </div>
             ))}
@@ -103,14 +111,8 @@ export default function HomePage({
       {/* 4. ANDHRA FARM TERROIR & HARVEST SHOWCASE */}
       <FarmShowcase />
 
-      {/* 5. CULINARY PAIRINGS & RECIPES */}
-      <RecipesSection onAddToCart={onAddToCart} products={products} />
-
-      {/* 6. QUALITY STANDARDS & INSTITUTIONAL TRUST */}
+      {/* 5. QUALITY STANDARDS & INSTITUTIONAL TRUST */}
       <QualityTrustSection />
-
-      {/* 7. FREQUENTLY ASKED QUESTIONS */}
-      <FAQSection lang={lang} translations={translations} />
 
     </div>
   );

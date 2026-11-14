@@ -90,10 +90,84 @@ export const productsData = [
 ];
 
 export const upcomingSpices = [
-  { name: "Coriander Powder (Dhania)", desc: "Whole roasted seeds stone-ground for citrusy brightness", tag: "In Development" },
-  { name: "Cumin Powder (Jeera)", desc: "Earthy, robust cumin rich in volatile natural thymol", tag: "In Development" },
-  { name: "Signature Garam Masala", desc: "Heritage blend of 14 single-origin whole spices", tag: "Artisan Recipe" },
-  { name: "Tellicherry Black Pepper", desc: "Bold South Indian peppercorns coarsely cracked for crisp heat", tag: "Next Harvest" }
+  {
+    id: "guntur-stemless-chilli",
+    name: "Guntur Sannam Whole Chilli (Stemless)",
+    category: "chilli",
+    type: "whole",
+    origin: "Guntur, Andhra Pradesh",
+    terroir: "Krishna Delta Black Soil",
+    tag: "Next Harvest",
+    desc: "Single-origin whole dried Sannam chillies, destemmed by hand. Perfect for traditional tadka and slow-simmered gravies.",
+    expectedRelease: "Next Harvest Batch",
+    status: "Coming Soon",
+    accentColor: "#A6261D"
+  },
+  {
+    id: "nizamabad-turmeric-fingers",
+    name: "Waigaon Nizamabad Turmeric Fingers",
+    category: "turmeric",
+    type: "whole",
+    origin: "Nizamabad, Telangana",
+    terroir: "Godavari Basin Riverbed Silt",
+    tag: "Next Harvest",
+    desc: "Sun-cured, hand-graded whole turmeric rhizomes packed with natural essential curcumin oils. Suitable for direct traditional grating.",
+    expectedRelease: "Next Harvest Batch",
+    status: "Coming Soon",
+    accentColor: "#D99316"
+  },
+  {
+    id: "tellicherry-black-pepper",
+    name: "Tellicherry Bold Black Pepper",
+    category: "seeds",
+    type: "whole",
+    origin: "Tellicherry, Malabar Coast",
+    terroir: "Western Ghats High Elevation",
+    tag: "Next Harvest",
+    desc: "Extra-bold hand-harvested black peppercorns with intense piperine warmth and woodsy citrus notes.",
+    expectedRelease: "Upcoming Small Batch",
+    status: "Coming Soon",
+    accentColor: "#24140F"
+  },
+  {
+    id: "stone-ground-coriander",
+    name: "Pure Coriander Powder (Dhania)",
+    category: "seeds",
+    type: "powder",
+    origin: "Kumbhraj, Madhya Pradesh",
+    terroir: "Clay Loam Rain-Fed Plains",
+    tag: "In Development",
+    desc: "Ambient stone-ground green coriander seeds, delivering a bright floral aroma with zero synthetic fillers.",
+    expectedRelease: "Laboratory Batch Stage",
+    status: "In Development",
+    accentColor: "#556B2F"
+  },
+  {
+    id: "stone-ground-cumin",
+    name: "Stone-Ground Cumin Powder (Jeera)",
+    category: "seeds",
+    type: "powder",
+    origin: "Unjha, Gujarat",
+    terroir: "Arid Sandy Loam Soil",
+    tag: "In Development",
+    desc: "Aromatic slow-ground cumin rich in natural cuminaldehyde and thymol oils for deep, earthy tempering.",
+    expectedRelease: "Laboratory Batch Stage",
+    status: "In Development",
+    accentColor: "#8B5A2B"
+  },
+  {
+    id: "signature-garam-masala",
+    name: "Signature 14-Spice Garam Masala",
+    category: "blends",
+    type: "blend",
+    origin: "Coastal Andhra & Western Ghats",
+    terroir: "Multi-Terroir Single Origins",
+    tag: "Artisan Recipe",
+    desc: "Time-honored blend of 14 whole coastal spices lightly dry-roasted and slow stone-milled for complex aromatic warmth.",
+    expectedRelease: "Formulation Finalized",
+    status: "Coming Soon",
+    accentColor: "#A0522D"
+  }
 ];
 
 export const recipes = [

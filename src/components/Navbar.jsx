@@ -48,8 +48,7 @@ export default function Navbar({ lang, setLang, cartCount, openCart, wishlistCou
           <NavLink to="/" className={navItemClass} end>Home</NavLink>
           <NavLink to="/shop" className={navItemClass}>Shop Spices</NavLink>
           <NavLink to="/our-story" className={navItemClass}>Our Farms</NavLink>
-          <NavLink to="/recipes" className={navItemClass}>Recipes</NavLink>
-          <NavLink to="/faqs" className={navItemClass}>FAQs</NavLink>
+          <NavLink to="/the-science" className={navItemClass}>The Science</NavLink>
           <NavLink to="/contact" className={navItemClass}>Contact</NavLink>
         </nav>
 
@@ -122,8 +121,7 @@ export default function Navbar({ lang, setLang, cartCount, openCart, wishlistCou
             <NavLink to="/" onClick={() => setMobileMenuOpen(false)} className={mobileNavLinkClass} end>Home</NavLink>
             <NavLink to="/shop" onClick={() => setMobileMenuOpen(false)} className={mobileNavLinkClass}>Shop Spices</NavLink>
             <NavLink to="/our-story" onClick={() => setMobileMenuOpen(false)} className={mobileNavLinkClass}>Our Farms</NavLink>
-            <NavLink to="/recipes" onClick={() => setMobileMenuOpen(false)} className={mobileNavLinkClass}>Recipes</NavLink>
-            <NavLink to="/faqs" onClick={() => setMobileMenuOpen(false)} className={mobileNavLinkClass}>FAQs</NavLink>
+            <NavLink to="/the-science" onClick={() => setMobileMenuOpen(false)} className={mobileNavLinkClass}>The Science</NavLink>
             <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)} className={mobileNavLinkClass}>Contact</NavLink>
           </nav>
 

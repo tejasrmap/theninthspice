@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { productsData, recipes } from '../data/products';
+import { productsData } from '../data/products';
 import PincodeEstimator from '../components/PincodeEstimator';
 import { 
   Flame, 
@@ -39,11 +39,6 @@ export default function ProductDetailPage({ onAddToCart, lang, translations, onT
 
   const originalPrice = Math.round(selectedVariant.price * 1.25);
   const discountPercent = Math.round(((originalPrice - selectedVariant.price) / originalPrice) * 100);
-
-  // Filter recipes using this spice
-  const matchingRecipes = recipes.filter(r => 
-    r.spicesUsed.some(s => s.toLowerCase().includes(isChilli ? 'chilli' : 'turmeric'))
-  );
 
   const handleShare = () => {
     navigator.clipboard?.writeText(window.location.href);
@@ -350,16 +345,6 @@ export default function ProductDetailPage({ onAddToCart, lang, translations, onT
             >
               Storage &amp; Usage
             </button>
-            <button
-              onClick={() => setActiveTab('recipes')}
-              className={`px-3 py-1.5 rounded-lg font-sans-brand font-medium transition-all cursor-pointer ${
-                activeTab === 'recipes'
-                  ? 'bg-[#24140F] text-white font-semibold'
-                  : 'text-[#766B60] hover:text-black hover:bg-stone-100'
-              }`}
-            >
-              Recipes ({matchingRecipes.length})
-            </button>
           </div>
 
           {/* TAB 1: OVERVIEW */}
@@ -467,30 +452,6 @@ export default function ProductDetailPage({ onAddToCart, lang, translations, onT
                 <li>Alternatively, decant into a clean, dry, airtight glass container.</li>
                 <li>Store in a cool, dark kitchen cupboard away from direct sunlight and stove heat.</li>
               </ul>
-            </div>
-          )}
-
-          {/* TAB 4: RECIPES */}
-          {activeTab === 'recipes' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-              {matchingRecipes.map((r, idx) => (
-                <div key={idx} className="p-3 rounded-lg bg-[#F8F4EB] border border-[#E9DDC9] space-y-1">
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="text-[10px] font-mono font-bold uppercase text-[#A6261D] bg-white px-2 py-0.5 rounded border border-[#E9DDC9]">
-                      {r.tag}
-                    </span>
-                    <span className="text-[#766B60] text-[11px] flex items-center gap-1 font-mono">
-                      <Clock className="w-3 h-3" /> {r.time}
-                    </span>
-                  </div>
-                  <div className="font-serif-brand font-semibold text-sm text-[#24140F]">
-                    {r.title}
-                  </div>
-                  <p className="text-xs text-[#766B60] leading-relaxed font-sans-brand">
-                    {r.desc}
-                  </p>
-                </div>
-              ))}
             </div>
           )}
 
